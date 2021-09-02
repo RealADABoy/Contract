@@ -1,0 +1,2 @@
+# Contract
+ADABoy Contract
