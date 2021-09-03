@@ -1,2 +1,2 @@
-# Contract
-ADABoy Contract
+# Contracts
+Token contracts for ADABoy the ecosystem.
