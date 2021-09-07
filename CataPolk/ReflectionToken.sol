@@ -550,7 +550,7 @@ contract ReflectionToken is IERC20 {
     mapping (address => bool) private _isSniper;
     mapping (address => bool) private _liquidityHolders;
 
-    uint256 private constant startingSupply = 100_000_000_000; // 100 Million, underscores aid readability
+    uint256 private constant startingSupply = 100_000_000_000; // 100 Billion, underscores aid readability
 
     uint8 private _decimals = 18;
     uint256 private _decimalsMul = _decimals;
@@ -559,9 +559,9 @@ contract ReflectionToken is IERC20 {
     string constant _name = "CATAPOLK";
     string constant _symbol = "CATPLK";
 
-    uint256 public _reflectionFee = 800;
-    uint256 public _liquidityFee = 400;
-    uint256 public _marketingFee = 100;
+    uint256 public _reflectionFee = 700;
+    uint256 public _liquidityFee = 200;
+    uint256 public _marketingFee = 400;
     uint256 public _totalFee = _liquidityFee + _reflectionFee + _marketingFee;
     uint256 public masterTaxDivisor = 10000;
 
@@ -579,10 +579,11 @@ contract ReflectionToken is IERC20 {
     address public burnAddress = 0x000000000000000000000000000000000000dEaD;
     address private ZERO = 0x0000000000000000000000000000000000000000;
 
-    address payable private _marketingWallet = payable(0x276a7bE88A6e5c4d96117d9C0f41fb2f3f561E2e);
+    // Change this
+    address payable private _marketingWallet = payable(0x000000000000000000000000000000000000dEaD);
 
-    // Maximum wallet size is 0.2% of the total supply.
-    uint256 private maxWalletPercent = 20; // Less fields to edit
+    // Maximum wallet size is 1% of the total supply.
+    uint256 private maxWalletPercent = 100; // Less fields to edit
     uint256 private maxWalletDivisor = 10000;
     uint256 private _maxWalletSize = (_tTotal * maxWalletPercent) / maxWalletDivisor;
     uint256 private _previousMaxWalletSize = _maxWalletSize;
@@ -592,7 +593,7 @@ contract ReflectionToken is IERC20 {
     uint256 targetLiquidityDenominator = 100;
 
     Cashier reflector;
-    uint256 reflectorGas = 750000;
+    uint256 reflectorGas = 500000;
 
     bool public swapAndLiquifyEnabled = false;
     bool public processReflect = false;
